@@ -13,9 +13,11 @@ the slow and annoying web console.
 How it works?
 
 You connect to an already known droplet (for which you get the fingerprints from the web
-console, please do not accept the fingerprints for it blindly), which we'll call 'base'
-droplet. Then we create, through the API, a 'target' droplet with the private networking
-enabled (internal digital ocean's local networking) IN THE SAME REGION OF THE BASE DROPLET
+console, please do not accept the fingerprints for it blindly) that has private networking enabled, 
+which we'll call 'base' droplet (if not in private network, enable it in dashboard for this droplet).
+
+Then we create, through the API, a 'target' droplet with the private networking
+enabled too (internal digital ocean's local networking) IN THE SAME REGION OF THE BASE DROPLET
 (of course). Then we SSH to the 'base' droplet, and inside it, we run ssh-keyscan to the
 'target' droplet via the local network, so we not get 'man in the middled' to retrieve the
 fingerprints, which are printed on the screen.
@@ -24,8 +26,8 @@ This script can connect to the base droplet through password or ssh keys, just c
 below. The target droplet will get all the ssh keys provided in the dashboard, but we 
 don't even connect to the 'target' droplet, we just ssh-keyscan it locally from the 'base' 
 droplet
-'''
 
+'''
 
 #user configuration--------------------------------
 token = "" #Digital Ocean API token
