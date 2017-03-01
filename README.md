@@ -7,8 +7,9 @@ the slow and annoying web console.
 #How it works?
 
 You connect to an already known droplet (for which you get the fingerprints from the web
-console, please do not accept the fingerprints for it blindly), which we'll call 'base'
-droplet. Then we create, through the API, a 'target' droplet with the private networking
+console, please do not accept the fingerprints for it blindly), that has private networking enabled, 
+which we'll call 'base' droplet (if not in private network, enable it in dashboard for this droplet).
+Then we create, through the API, a 'target' droplet with the private networking
 enabled (internal digital ocean's local networking) IN THE SAME REGION OF THE BASE DROPLET
 (of course). Then we SSH to the 'base' droplet, and inside it, we run ssh-keyscan to the
 'target' droplet via the local network, so we not get 'man in the middled' to retrieve the
@@ -42,4 +43,4 @@ Now just run
 
 `python3 create_check_fingerprint.py`
 
-[1] http://www.phcomp.co.uk/Tutorials/Unix-And-Linux/ssh-check-server-fingerprint.html
+[1]: http://www.phcomp.co.uk/Tutorials/Unix-And-Linux/ssh-check-server-fingerprint.html
