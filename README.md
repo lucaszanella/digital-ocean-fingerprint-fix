@@ -37,7 +37,9 @@ do   ssh-keygen -lf $file
 done
 ``` 
 
-You'll get the fingerprints of the different keys your host has. Put them into `base_droplet_fingerprints` in one of the example's configuration part (currently there's just create_check_fingerprint.py), and configure the rest: if your base droplet is accessible through password (not recommended), insert the `password` and leave key_filename_base_droplet = None. If it's acessible through public key, then put the key's password in the `password` variable, and the path to the file (not the folder) in `key_filename_base_droplet`. Scpecify the name of the target droplet in `name_target_droplet` and specify if you want to create it or if it already exists in `create_droplet = True`. Don't forget to set up the `target_droplet_config` if you want to create your target droplet. Remember to put the same region as the base droplet.
+You'll get the fingerprints of the different keys your host has. Put them into `base_droplet_fingerprints` in one of the example's configuration part (currently there's just `create_check_fingerprint.py`). 
+
+Configure the rest: if your base droplet is accessible through password (not recommended), insert the `password` and leave `key_filename_base_droplet = None`. If it's acessible through public key, then put the key's password in the `password` variable, and the path to the file (not the folder) in `key_filename_base_droplet`. Scpecify the name of the target droplet in `name_target_droplet` and specify if you want to create it or if it already exists in `create_droplet = True`. Don't forget to set up the `target_droplet_config` if you want to create your target droplet. Remember to put the same region as the base droplet.
 
 Now just run
 
