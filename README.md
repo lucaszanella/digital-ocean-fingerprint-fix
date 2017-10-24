@@ -1,10 +1,10 @@
-#Securely get fingerprint for Digital Ocean droplets
+# Securely get fingerprint for Digital Ocean droplets
 
 Script to fix the Digital Ocean's old problem of not providing fingerprints for
 newly created droplets, making you insecurely accept them or painly find them on
 the slow and annoying web console. 
 
-#How it works?
+# How it works?
 
 You connect to an already known droplet (for which you get the fingerprints from the web
 console, please do not accept the fingerprints for it blindly), that has private networking enabled, 
@@ -20,7 +20,7 @@ below. The target droplet will get all the ssh keys provided in the dashboard, b
 don't even connect to the 'target' droplet, we just ssh-keyscan it locally from the 'base' 
 droplet
 
-#Usage
+# Usage
 
 Install `paramiko` (SSH client for python) and `python-digitalocean` (Digital Ocean python API client) with:
 
